@@ -8,7 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 const userRouter = require("./routes/userRouter")
-app.use("/api/v1",userRouter)
+const postRoute = require("./routes/postRouter")
+app.use("/api/v1", userRouter)
+app.use("/api/v1", postRoute)
 
 // path for env file set up
 if (process.env.NODE_ENV !== "production ") {
